@@ -1,6 +1,4 @@
-{ config, pkgs, inputs, hostName, username, ... }: # Note the available specialArgs
-
-{
+{ config, pkgs, inputs, hostName, username, ... }: { # Note the available specialArgs
   # Home Manager needs a state version
   home.stateVersion = "24.11"; # Match your NixOS stateVersion
 
