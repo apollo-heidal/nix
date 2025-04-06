@@ -4,7 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      <home-manager/nixos>
+      # The home-manager module is imported via flake.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -77,7 +77,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
-    po = {
+    apollo = {
       isNormalUser = true;
       extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
       useDefaultShell = true;
