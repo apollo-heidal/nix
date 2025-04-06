@@ -79,22 +79,17 @@
   users.users = {
     apollo = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-      useDefaultShell = true;
+      extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ and add to docker group
+      useDefaultShell = true; # zsh is set globally via users.defaultUserShell
     };
   };
 
-  home-manager.users.po = import ./home.nix;
+  # Home Manager user configuration is handled in flake.nix
 
-  programs.zsh = {
-    enable = true;
-    ohMyZsh.enable = true;
-  };
+  # User-specific shell and editor configs are handled by Home Manager below
+  # programs.zsh = { ... };
+  # programs.neovim = { ... };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   # 1. enable vaapi on OS-level
   nixpkgs.config.packageOverrides = pkgs: {

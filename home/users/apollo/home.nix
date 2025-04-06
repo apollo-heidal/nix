@@ -11,6 +11,9 @@
   # Basic packages
   home.packages = with pkgs; [
     htop
+    # Language servers for Neovim completions
+    lua-language-server # Lua LSP
+    nixd # Nix LSP
     # Add user-specific packages here
   ];
 
@@ -24,26 +27,49 @@
   # Enable home-manager command
   programs.home-manager.enable = true;
 
-  # Link user's zsh config if needed, or configure directly
-  # programs.zsh = {
-  #   enable = true;
-  #   ohMyZsh.enable = true;
+  # Configure Zsh
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true; # Enable zsh's completion system
+    autosuggestion.enable = true; # Enable fish-like autosuggestions
+    syntaxHighlighting.enable = true; # Enable syntax highlighting
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "docker" "docker-compose" ]; # Add plugins for completions
+      # theme = "robbyrussell"; # Set your preferred theme
+    };
   #   # dotDir = ".config/oh-my-zsh"; # Example if managing dotfiles elsewhere
   #   # initExtra = ''
   #   #  source ${config.home.homeDirectory}/.zshrc.local # Example
   #   # '';
   # };
 
-  # Link user's neovim config if needed, or configure directly
-  # programs.neovim = {
-  #   enable = true;
-  #   # package = pkgs.neovim-unwrapped; # Example if using a wrapper
-  #   # extraConfig = ''
-  #   #  lua << EOF
-  #   #  require('your-nvim-config')
-  #   #  EOF
-  #   # '';
-  # };
+  # Configure Neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true; # Sets $EDITOR, $VISUAL
+    # package = pkgs.neovim-unwrapped; # Use if you need a specific neovim package
+    # extraConfig = ''
+    #   " Basic settings can go here
+    #   set number relativenumber
+    #   set tabstop=2 shiftwidth=2 expandtab
+
+    #   " Example for LSP/completion setup (requires plugins like nvim-lspconfig, nvim-cmp)
+    #   lua << EOF
+    #   -- require('lspconfig').lua_ls.setup{}
+    #   -- require('lspconfig').nixd.setup{}
+    #   -- require('cmp').setup{ ... } -- Requires nvim-cmp setup
+    #   EOF
+    # '';
+    # plugins = with pkgs.vimPlugins; [
+    #   nvim-lspconfig # LSP configuration helper
+    #   nvim-cmp # Completion engine
+    #   cmp-nvim-lsp # LSP source for nvim-cmp
+    #   cmp-buffer # Buffer source for nvim-cmp
+    #   cmp-path # Path source for nvim-cmp
+    #   -- Add other plugins here
+    # ];
+  };
 
   # Environment variables specific to the user
   # home.sessionVariables = {
