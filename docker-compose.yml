@@ -1,0 +1,19 @@
+# docker-compose.yml
+services:
+  aider:
+    image: paulgauthier/aider-full
+
+    volumes:
+      - ./:/app
+
+    working_dir: /app
+
+    environment:
+      AIDER_MODEL: "gemini/gemini-2.5-pro-exp-03-25"
+      AIDER_DARK_MODE: true
+      AIDER_VERBOSE: true
+      AIDER_VIM: true
+
+    # Keep stdin open and allocate a pseudo-TTY for interactive use
+    stdin_open: true
+    tty: true
