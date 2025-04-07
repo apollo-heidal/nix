@@ -40,7 +40,7 @@
   #   # initExtra = ''
   #   #  source ${config.home.homeDirectory}/.zshrc.local # Example
   #   # '';
-  # };
+  }; # Semicolon closing programs.zsh
 
   # Configure Neovim
   programs.neovim = {
@@ -67,7 +67,7 @@
     #   cmp-path # Path source for nvim-cmp
     #   -- Add other plugins here
     # ];
-  };
+  }; # Semicolon closing programs.neovim (This is the last attribute)
 
   # Environment variables specific to the user
   # home.sessionVariables = {
