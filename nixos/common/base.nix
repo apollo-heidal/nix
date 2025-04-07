@@ -32,7 +32,7 @@
   # Disable wireless by default (can be enabled per-host)
   networking.wireless.enable = false;
   # Set a default hostname (will be overridden by host-specific config)
-  networking.hostName = "nixos";
+  # networking.hostName = "nixos"; # REMOVED: Hostname should be set in host-specific config
 
   # --- Services ---
   # Enable the OpenSSH daemon for remote access.
