@@ -49,6 +49,10 @@
   # Set Zsh as the default shell for users
   users.defaultUserShell = pkgs.zsh;
 
+  # --- Programs ---
+  # Enable Zsh system-wide settings (needed if users.defaultUserShell is zsh)
+  programs.zsh.enable = true;
+
   # --- Packages ---
   # Install some common utility packages system-wide
   environment.systemPackages = with pkgs; [
