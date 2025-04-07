@@ -31,7 +31,8 @@
     enableCompletion = true; # Enable zsh's completion system
     autosuggestion.enable = true; # Enable fish-like autosuggestions
     syntaxHighlighting.enable = true; # Enable syntax highlighting
-    ohMyZsh = {
+    # Corrected attribute name: oh-my-zsh
+    oh-my-zsh = {
       enable = true;
       plugins = [ "git" "docker" "docker-compose" ]; # Add plugins for completions
       # theme = "robbyrussell"; # Set your preferred theme
