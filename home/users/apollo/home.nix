@@ -1,4 +1,6 @@
-{ config, pkgs, lib, inputs, hostName, username, ... }: { # Note the available specialArgs, added lib
+{ config, pkgs, lib, inputs, hostName, username, ... }: 
+
+{ # Note the available specialArgs, added lib
   # Home Manager needs a state version
   home.stateVersion = "24.11"; # Match your NixOS stateVersion
 
@@ -18,8 +20,8 @@
   # Example: Configure git
   programs.git = {
     enable = true;
-    userName = "Apollo"; # Replace with actual name
-    userEmail = "apollo@example.com"; # Replace with actual email
+    userName = "Apollo Heidal";
+    userEmail = "apolloheidal@gmail.com";
   };
 
   # Enable home-manager command

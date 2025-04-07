@@ -47,6 +47,15 @@
             # Shared NixOS configurations
             ./nixos/common/base.nix
 
+	    {
+	      users.users.${username} = {
+	        hashedPassword = "$y$j9T$XlOqfLvWOoyy1WPg7.4JI0$nNNRnfbEx12U44V5CWrO1qtA8lcNPtvYL3oIqbt.m6.";
+	        openssh.authorizedKeys.keys = [
+                  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGHxIzUn0y0LhMBp6zYA6kxs1V/D2yiYdEN4HD0ttw4E apollo@PoBook.local"
+	        ];
+	      };
+	    }
+
             # Home Manager configuration for the primary user of this system
             {
               home-manager.useGlobalPkgs = true; # Share nixpkgs instance

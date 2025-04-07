@@ -51,6 +51,7 @@
   # --- Users ---
   # Set Zsh as the default shell for users
   users.defaultUserShell = pkgs.zsh;
+  users.mutableUsers = false;
 
   # --- Programs ---
   # Enable Zsh system-wide settings (needed if users.defaultUserShell is zsh)
