@@ -29,6 +29,9 @@
   # --- Networking ---
   # Enable NetworkManager for easier network configuration
   networking.networkmanager.enable = true;
+  # Disable the "wait online" service, which can cause unnecessary delays/failures
+  # See: https://nixos.wiki/wiki/Networking#NetworkManager
+  systemd.services.NetworkManager-wait-online.enable = false;
   # Disable wireless by default (can be enabled per-host)
   networking.wireless.enable = false;
   # Set a default hostname (will be overridden by host-specific config)
