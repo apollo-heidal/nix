@@ -1,7 +1,9 @@
 # docker-compose.yml
 services:
   aider:
-    image: paulgauthier/aider-full
+    # Instead of using a pre-built image, build one from the Dockerfile in the current directory (.)
+    build: .
+    # image: paulgauthier/aider-full # This line is replaced by build: .
 
     volumes:
       - ./:/app
