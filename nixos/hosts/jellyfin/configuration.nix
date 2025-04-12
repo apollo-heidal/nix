@@ -41,9 +41,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    tree
-    wget
-    git
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
@@ -52,7 +49,6 @@
     wireguard-tools
     iproute2
     bind
-    lynx # Added lynx browser
   ];
   
 

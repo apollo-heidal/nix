@@ -10,11 +10,16 @@
 
   # Basic packages
   home.packages = with pkgs; [
+    tree
+    wget
+    git
     htop
+    lynx
+    aider-chat
+
     # Language servers for Neovim completions
     lua-language-server # Lua LSP
     nixd # Nix LSP
-    # Add user-specific packages here
   ];
 
   # Example: Configure git
