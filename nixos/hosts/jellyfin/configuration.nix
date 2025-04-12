@@ -52,6 +52,7 @@
     wireguard-tools
     iproute2
     bind
+    lynx # Added lynx browser
   ];
   
 
@@ -177,4 +178,3 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
-
